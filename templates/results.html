@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">   
+  <title>{{word}} Jobs</title>
+</head>
+<body>
+  <header>
+    <h1><a href="/">Remote Jobs</a></h1>
+    <h2>{{numOfJobs}} {{word}} jobs found.</h2>
+    <h3><a href="/export?word={{word}}">Export to CSV</a></h3>
+  </header>
+  <main>
+    {% for job in jobs %}
+    <div>
+      <div class="content">
+        <h2 class="job-info">{{job['title']}}</h2>
+        <h3 class="job-info">{{job.company}}</h3>
+        <h3 class="job-info"><a href="{{job.link}}" target="_blank">Apply</a></h3>
+      </div>
+    </div>
+    {% endfor %}
+  </main>
+</body>
+</html>

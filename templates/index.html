@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">   
+  <title>Remote Jobs</title>
+</head>
+  <body>
+    <header><h1>Remote Jobs</h1></header>
+    <main>
+      <section>
+        <h3>Search by term:</h3>
+        <form action="/search" method="get">
+          <input type="text" name="word" placeholder="i.e. python" />
+          <button>Find jobs</button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
